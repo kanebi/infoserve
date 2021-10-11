@@ -4,3 +4,6 @@
 #citi{
     color: rgba(252, 175, 10, 0.507);
 }
+#navbarResponsive .nav-link:hover {
+    color: rgba(252, 175, 10, 0.507);
+}
