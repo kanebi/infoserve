@@ -37,17 +37,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">CONTACT US</a>
                     </li>
-                    <li class="nav-item" id='login' onclick="loginpopup()">
+                    <li class="nav-item" id='login'
+                        onclick="loginpopup();document.getElementById('signuppage').style.height = '0'">
                         <a class="nav-link" href="#">LOGIN</a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SIGN UP</a>
+                        <a class="nav-link" href="#"
+                            onclick="signuppopup();document.getElementById('loginpage').style.height='0'">SIGN UP</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- login -->
     <div class="login-page" id="loginpage">
         <div class="container">
             <div class="row">
@@ -107,6 +110,61 @@
         </div>
     </div>
 
+    <!-- Signup -->
+
+    <div class="signup-page" id="signuppage">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="signup-form">
+                    <form action="" class="mt-5 border p-4  shadow">
+                        <h4 class="mb-5 text-secondary">Create Your Account</h4>
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label>First Name<span class="text-danger">*</span></label>
+                                <input type="text" name="fname" class="form-control" placeholder="Enter First Name">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label>Last Name<span class="text-danger">*</span></label>
+                                <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label>Email<span class="text-danger">*<span<label>
+                                            <input type="email" class="form-control" name="" id=""
+                                                aria-describedby="emailHelpId" placeholder="Enter your email">
+                                            <small id="emailHelpId" class="form-text text-muted">Your email</small>
+                            </div>
+
+                            <div class="mb-3 col-md-12">
+                                <label>Password<span class="text-danger">*</span></label>
+                                <input type="password" name="password" class="form-control"
+                                    placeholder="Enter Password">
+                            </div>
+                            <div class="mb-3 col-md-12">
+                                <label>Confirm Password<span class="text-danger">*</span></label>
+                                <input type="password" name="confirmpassword" class="form-control"
+                                    placeholder="Confirm Password">
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary float-end">SIGN UP</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="text-center mt-3 text-secondary">Already have an account? <a href="#">Login Now</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        #navbarResponsive .nav-link:hover {
+            color: rgb(252, 175, 10, 0.507);
+        }
+    </style>
+
+
     <style>
         #navbarResponsive .nav-link:hover {
             color: rgb(252, 175, 10, 0.507);
@@ -120,6 +178,26 @@
         else { document.getElementById('loginpage').style.height = '100%' }
 
     }
+
+    signuppopup = () => {
+        if (document.getElementById('signuppage').style.opacity == '1') {
+
+
+            document.getElementById('signuppage').style.filter = 'blur(10px)';
+            document.getElementById('signuppage').style.opacity = '0';
+            document.getElementById('signuppage').style.height = '0'
+
+        }
+        else {
+            document.getElementById('signuppage').style.height = '100%'
+            document.getElementById('signuppage').style.filter = 'blur(0)';
+            document.getElementById('signuppage').style.opacity = '1'
+
+
+        }
+
+    }
 </script>
+
 
 </html>
