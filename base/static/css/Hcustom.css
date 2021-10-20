@@ -1,13 +1,13 @@
-#Hicon img{
+.headercont #Hicon img{
     width:25px;
 }
-#citi{
+.headercont #citi{
     color: rgba(252, 175, 10, 0.507);
 }
-#navbarResponsive .nav-link:hover {
+.headercont #navbarResponsive .nav-link:hover {
     color: rgba(252, 175, 10, 0.507);
 }
-.login-page {
+.headercont .login-page {
     position: fixed;
     z-index: 10;
     margin-top: 20px;
@@ -25,7 +25,7 @@
 }
 
 
-.form-left {
+.headercont.form-left {
     background-color:rgba(252, 175, 10, 0.507);
 }
 

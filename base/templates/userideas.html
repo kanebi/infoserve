@@ -1,0 +1,116 @@
+{% load static %}
+
+<div class="cont">
+    <div class="mouse"></div>
+    <div class="app">
+        <div class="app__bgimg">
+            <div class="app__bgimg-image app__bgimg-image--1">
+            </div>
+            <div class="app__bgimg-image app__bgimg-image--2">
+            </div>
+        </div>
+        <div class="app__img" style="background-image: url('static/img/lib2.jpg')">
+            <img onmousedown="return false" style="filter: saturate(20%,40%);" src="{% static '/img/lib2.jpg' %}"
+                alt="city" />
+        </div>
+        <div class="">
+            <div class="app__text app__text--1 ">
+                <div class="app__text-line app__text-line--4">Own Your Library </div>
+                <div class="app__text-line app__text-line--3">New Experince with us </div>
+                <div class="app__text-line app__text-line--2">we setup library for both Individuals and organisations
+                    starting with knowing your area of relevance and architecting the best experience for you and your
+                    3rd
+                    parties .</div>
+                <div class="app__text-line app__text-line--1"><img src="" alt="" /></div>
+            </div>
+        </div>
+
+        <div class="app__text app__text--2 ">
+            <div class="app__text-line app__text-line--4">Can We Get a Chance</div>
+            <div class="app__text-line app__text-line--3">To Prove It </div>
+            <div class="app__text-line app__text-line--2">As It's Ought To Be</div>
+            <div class="app__text-line app__text-line--1"><img src="" alt="" /></div>
+        </div>
+    </div>
+    <div class="pages">
+        <ul class='pages__list'>
+            <li data-target='1' class='pages__item pages__item--1 page__item-active'></li>
+            <li data-target='2' class='pages__item pages__item--2'></li>
+        </ul>
+    </div>
+</div>
+<a href="https://dribbble.com/shots/2936160-Opus-Animation" target="_blank" class="icon-link">
+    <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
+</a>
+<a href="https://twitter.com/mrspok407" target="_blank" class="icon-link icon-link--twitter">
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+</a>
+
+<script>
+    $(document).ready(function () {
+        const $app = $(".app");
+        const $img = $(".app__img");
+        const $pageNav1 = $(".pages__item--1");
+        const $pageNav2 = $(".pages__item--2");
+        let animation = true;
+        let curSlide = 1;
+        let scrolledUp, nextSlide;
+
+        let pagination = function (slide, target) {
+            animation = true;
+            if (target === undefined) {
+                nextSlide = scrolledUp ? slide - 1 : slide + 1;
+            } else {
+                nextSlide = target;
+            }
+
+            $(".pages__item--" + nextSlide).addClass("page__item-active");
+            $(".pages__item--" + slide).removeClass("page__item-active");
+
+            $app.toggleClass("active");
+            setTimeout(function () {
+                animation = false;
+            }, 3000);
+        };
+
+        let navigateDown = function () {
+            if (curSlide > 1) return;
+            scrolledUp = false;
+            pagination(curSlide);
+            curSlide++;
+        };
+
+        let navigateUp = function () {
+            if (curSlide === 1) return;
+            scrolledUp = true;
+            pagination(curSlide);
+            curSlide--;
+        };
+
+        setTimeout(function () {
+            $app.addClass("initial");
+        }, 1500);
+
+        setTimeout(function () {
+            animation = false;
+        }, 4500);
+
+        $(document).on("mousewheel DOMMouseScroll", function (e) {
+            var delta = e.originalEvent.wheelDelta;
+            if (animation) return;
+            if (delta > 0 || e.originalEvent.detail < 0) {
+                navigateUp();
+            } else {
+                navigateDown();
+            }
+        });
+
+        $(document).on("click", ".pages__item:not(.page__item-active)", function () {
+            if (animation) return;
+            let target = +$(this).attr("data-target");
+            pagination(curSlide, target);
+            curSlide = target;
+        });
+    });
+
+</script>
