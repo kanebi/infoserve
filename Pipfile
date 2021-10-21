@@ -11,7 +11,9 @@ pillow = "*"
 dj-database-url = "*"
 whitenoise = "*"
 psycopg2 = "*"
-
+libsass="*"
+django-sass-processor="*"
+django-compressor="*"
 [dev-packages]
 
 [requires]
