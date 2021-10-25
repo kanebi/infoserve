@@ -1,124 +1,348 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 {% load static %}
+{% load sass_tags %}
 {% block content %}
-{% block stylecss %}
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-{% endblock stylecss %}
-<header>
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-                aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
-                aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
-                aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
-                aria-label="Slide 8"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
-                aria-label="Slide 9"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
-                aria-label="Slide 10"></button>
+
+
+
+<link rel="stylesheet" type="text/css" href="{% sass_src 'sass/custom/slidecarousel.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/services.css' %}">
+<!-- ABOUT -->
+<section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                <div class="about-text">
+                    <small class="small-text">Welcome to <span class="mobile-block">Oakciti</span></small>
+                    <h1 class="animated animated-text">
+                        <span class="mr-2">Setup A Library In Your </span>
+                        <div class="animated-info">
+                            <span class="animated-item">Home</span>
+                            <span class="animated-item">Office </span>
+                            <span class="animated-item">Institution</span>
+                        </div>
+                    </h1>
+
+                    <p>Library can never be obsolete looking when we are in charge, our synergy with high technology and
+                        much enticing achitectural design guarantee that your reading/study remain a magical experience
+                        everytime.</p>
+
+                    <div class="custom-btn-group mt-4">
+                        <a href="#" class="btn mr-lg-2 custom-btn"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                            Tell Me More</a>
+                        <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-12 col-12">
+                <div class="about-image svg">
+                    <img src="{% static 'svg/svglib1.svg' %}" class="img-fluid" alt="svg image">
+                </div>
+            </div>
+
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('static/img/lib1.jpg')">
-                <div class="carousel-caption">
-                    <h5>Bringing Knowledge to your Home</h5>
-                    <p>Let us help you set up your library.</p>
+    </div>
+</section>
+
+
+<section class="services">
+    <div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center">
+        <div class="hd">Why People Believe in Us</div>
+        <p><small class="text-muted">We go farther than our strength can carry <br />to make sure we meet your need and
+                render our best service.
+            </small></p>
+        <div class="row" style="justify-content: center">
+            <div class="card col-md-3 col-12">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="imgconts"><img class="img" src="{% static 'img/office-furniture.png' %}" /></div>
+                        <div class="shadow"></div>
+                        <div class="card-title"> Best furniture </div>
+                        <div class="card-subtitle">
+                            <p> <small class="text-muted">Wether you like the local or Traditional Feel, modern or
+                                    urban, You want a
+                                    Fancy setting? We Got You !!</small> </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib2.jpg')">
-                <div class="carousel-caption">
-                    <h5>Own your dream Library!</h5>
-                    <p>Let us make your dream library a Reality.</p>
+            <div class="card col-md-3 col-12 ml-2">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="imgconts"><img class="img" src="{% static 'img/think-outside-the-box.png' %}" />
+                        </div>
+                        <div class="card-title"> Outside the Box </div>
+                        <div class="card-subtitle">
+                            <p> <small class="text-muted"> We are already thinking outside the box of the normal boring
+                                    study environ. While working with your decision, we do not hesitate to make the best
+                                    out of it. </small> </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib3.jpg')">
-                <div class="carousel-caption">
-                    <h5>Need Facilities?</h5>
-                    <p>We can arrange your desired facilties for you!.</p>
+            <div class="card col-md-3 col-12 ml-2">
+                <div class="card-content">
+                    <div class="card-body"> <img class="img rck" src="https://i.imgur.com/rG3CGn3.png" />
+                        <div class="card-title"> We Guide you </div>
+                        <div class="card-subtitle">
+                            <p> <small class="text-muted">We provide you with the best advice in the process of
+                                    developing your collections and building a memorable reading history.</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib4.jpg')">
-                <div class="carousel-caption">
-                    <h5>We are your best chance at having your dream Library collections</h5>
-                    <p>Contact us!.</p>
+            <div class="card col-md-3 col-12 ml-2">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="imgconts"><img class="img rck" src="{% static 'img/customer-care.png' %}" /></div>
+                        <div class="card-title"> We Care </div>
+                        <div class="card-subtitle">
+                            <p> <small class="text-muted"> We do not just leave you and a library. We make sure that
+                                    your are always up-to-date in your field and on the works of your best author. How?
+                                    through an agreeable follow up calls/email few times a month.</small> it'd be Fun!
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib5.jpg')">
-                <div class="carousel-caption">
-                    <h5>Get your desired information at the snap of your thumb!</h5>
-                    <p>Information on your comfort.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib6.jpg')">
-                <div class="carousel-caption">
-                    <h5>Digitize your Library with our help</h5>
-                    <p>We provide the best facilities for automation.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib7.jpg')">
-                <div class="carousel-caption">
-                    <h5>Train your personnels</h5>
-                    <p>We have the right staff for coaching your staff.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib8.jpg')">
-                <div class="carousel-caption">
-                    <h5>Looking for a librarian?</h5>
-                    <p>Book a librarian with us, we guarantee professionals.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib9.jpg')">
-                <div class="carousel-caption">
-                    <h5>Looking for the right environment to set up your Library?</h5>
-                    <p>We can do the scouting for you.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('static/img/lib10.jpg')">
-                <div class="carousel-caption">
-                    <h5>We can also create a database for you!</h5>
-                    <p>Databases are important for saving your files and documents.</p>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+        <!-- <div class="ft">
+            <p class="chk"><small class="text-muted">Still not sure?</small></p>
+            <div class="btn btn-primary">Read All Testimonials</div>
+        </div> -->
+    </div>
+</section>
 
 
+<!-- Our project Samples -->
+
+
+
+<section class="project py-5" id="project">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-11 text-center mx-auto col-12">
+
+                <div class="col-lg-8 mx-auto">
+                    <h2>Architectures that <br /> tells our story better</h2>
+                </div>
+                <!---carousel-->
+                <div class="indexcarousel">
+                    <div class="divider">
+                        <ul class="slides">
+                            <li id="slide1"><img style="width:inherit;" src="{% static 'img/lib4.jpg' %}" alt="" />
+                            </li>
+                            <li id="slide2"><img style="width:inherit;" src="{% static 'img/lib1.jpg' %}" alt="" />
+                            </li>
+                            <li id="slide3"><img style="width:inherit;" src="{% static 'img/lib3.jpg' %}" alt="" />
+                            </li>
+                            <li id="slide4"><img style="width:inherit;" src="{% static 'img/lib2.jpg' %}" alt="" />
+                            </li>
+                            <li id="slide5"><img style="width:inherit;" src="{% static 'img/lib5.jpg' %}" alt="" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divider2">
+                        <ul class="thumbnails">
+                            <li>
+                                <a href="#slide1"><img src="{% static 'img/lib4.jpg' %}" /></a>
+                            </li>
+                            <li>
+                                <a href="#slide2"><img src="{% static 'img/lib1.jpg' %}" /></a>
+                            </li>
+                            <li>
+                                <a href="#slide3"><img src="{% static 'img/lib3.jpg' %}" /></a>
+                            </li>
+                            <li>
+                                <a href="#slide4"><img src="{% static 'img/lib2.jpg' %}" /></a>
+                            </li>
+                            <li>
+                                <a href="#slide5"><img src="{% static 'img/lib5.jpg' %}" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!---carousel end-->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- FEATURES -->
+<section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12">
+                <h2 class="mb-4"> Our Global Goal </h2>
+
+                <div class="timeline">
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>Society</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>More Knowledgeable </span><small>Generation</small></h3>
+                            <p>We want to help people see farther than they already think there is when dealing with
+                                information. We earnestly belief we can play a vital role in Knowledge development
+                                especially in
+                                our
+                                Digital generation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>You</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>Unbreakable Bond</span><small>Between you and Information</small></h3>
+                            <p>Alot of students, startups, peoples e.t.c have failed because they are bonded with the
+                                wrong knowledge/information. We just do not want to set up a library but also help you
+                                build a conection with the right knowledge.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>Us</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>Create Opportunities<small>For Librarians/information Scientists.</small></h3>
+                            <p>Our Platform would never reach its purpose if we do not build a strong community for
+                                librarians.
+                                We are creating opportunities both for a freelancing service and also an interactive
+                                portal were these people can discuss and share they views and thoughts on how the
+                                library can be more appreciable in our society. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-6 col-12">
+                <h2 class="mb-4 mobile-mt-2">Educations</h2>
+
+                <div class="timeline">
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>2017</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>Mobile Web</span><small>Master Design</small></h3>
+                            <p>Please tell your friends about Tooplate website. That would be very helpful. We need your
+                                support.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>2015</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>User Interfaces</span><small>Creative Agency</small></h3>
+                            <p><a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a> is a great
+                                website to
+                                download HTML templates without any login or email.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                            <span>2013</span>
+                        </div>
+                        <div class="timeline-info">
+                            <h3><span>Artwork Design</span><small>New Art School</small></h3>
+                            <p>You can freely use Tooplate's templates for your business or personal sites. You cannot
+                                redistribute
+                                this template without a permission.</p>
+                        </div>
+                    </div>
+
+                </div> -->
+        </div>
 
     </div>
-</header>
-<style>
-    .carousel-item {
+    </div>
+</section>
 
-        height: 80vh;
-        min-height: 350px;
-        background: no-repeat center center scroll;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-</style>
+<!-- CONTACT -->
+<section class="contact py-5" id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5 mr-lg-5 col-12">
+                <div class="google-map w-100">
+                    <iframe src="https://maps.google.com/maps?q=CHOBA&t=&z=13&ie=UTF8&iwloc=&output=embed" width="400"
+                        height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+
+                <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                    <div class="contact-info-item">
+                        <h3 class="mb-3 text-white">Say hello</h3>
+                        <p class="footer-text mb-0">+234 8138682705</p>
+                        <p><a href="mailto:oakcitiGroup@gmail.com">oakcitiGroup@gmail.com</a></p>
+                    </div>
+
+                    <ul class="social-links">
+                        <li><a href="#" class="uil" data-toggle="tooltip" data-placement="left" title="Phone"> <i
+                                    class="fa fa-phone" aria-hidden="true"></i></i></a>
+                        </li>
+
+                        <li><a href="#" class="uil " data-toggle="tooltip" data-placement="left" title="Youtube"><i
+                                    class="fa fa-google" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="contact-form">
+                    <h2 class="mb-4">Interested to work together? Let's talk</h2>
+
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                            </div>
+
+                            <div class="col-12">
+                                <textarea name="message" rows="6" class="form-control" id="message"
+                                    placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="ml-lg-auto col-lg-5 col-12">
+                                <input type="submit" class="form-control submit-btn" value="Send">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
 
 {% endblock %}

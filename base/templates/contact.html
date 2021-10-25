@@ -6,11 +6,6 @@ contact us
 
 {% block stylecss %}
 <style>
-    html,
-    body {
-        overflow-x: hidden
-    }
-
     * {
         margin: 0;
         padding: 0;
@@ -51,7 +46,7 @@ contact us
     }
 
     .customcontact nav {
-        position: fixed;
+
         top: 0;
         width: 100%;
         z-index: 2;
@@ -152,24 +147,25 @@ contact us
     }
 
     .customcontact .content {
-        position: fixed;
+
         top: 60px;
         height: calc(100vh - 60px);
         width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: auto;
+
         padding: 20px
     }
 
     .customcontact .contact {
+
         width: 80%;
         max-width: 1080px;
         display: flex;
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.28);
         border-radius: 5px;
-        overflow: hidden
+
     }
 
     .customcontact .other {
@@ -376,11 +372,11 @@ contact us
 
 {% block content %}
 <div class="customcontact">
-    <div class="map"> <iframe src="https://snazzymaps.com/embed/2369" width="100%" height="100%"
-            style="border:none;"></iframe>
+    <div class="map"> <iframe src="https://maps.google.com/maps?q=CHOBA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:none;"></iframe>
     </div>
     <div class="content">
-        <div class="contact">
+        <div class="contact" style="z-index: 2;">
             <div class="other">
                 <div class="info">
                     <h2>Thanks for choosing us! </h2>
@@ -413,7 +409,7 @@ contact us
                             </svg></a> </div>
                 </div>
             </div>
-            <div class="form">
+            <div class="form" style="background-color: inherit;">
                 <h1>Get In Touch</h1>
                 <form action="">
                     <div class="flex-rev"> <input type="text" placeholder="Tobe Peter" name="name" id="name" /> <label

@@ -14,21 +14,14 @@
 
 </head>
 
-{% include "layout/header.html" %}
-
 <body>
-    <section>
-        <div>
-            {% block content %}
 
-            {% endblock %}
-        </div>
-    </section>
+    {% include "layout/header.html" %}\
+    {% block content %}
 
+    {% endblock %}
+
+    {% include "layout/footer.html" %}
 </body>
-
-
-
-
 
 </html>

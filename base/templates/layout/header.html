@@ -1,195 +1,158 @@
 {% load static %}
+{% load sass_tags %}
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="icon" href="{% static 'img/LOGO.png' %}" type="image/png">
-    <link rel='stylesheet' type='text/css' href="{% static 'css/bootstrap.min.css' %}">
+
     <link rel='stylesheet' type='text/css' href="{% static 'css/Hcustom.css' %}">
     <link rel='stylesheet' type='text/css' href="{% static 'css/bootstrap.css' %}">
 
     <link rel='stylesheet' type='text/css' href="{% static 'css/font-awesome.css' %}">
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'js/jquery-3.4.1.slim.js' %}"></script>
+
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/unicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'sass/tooplate-style.scss' %}">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
 </head>
+<div class="headercont">
 
-<body>
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <body>
+        <!-- Navigation -->
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container">
 
+                <a class="navbar-brand" href="index.html">
+                    <div id="Hicon" style="margin: 0;padding: 0;display: block; user-select: none;"><img
+                            src="{% static 'img/LOGO.png' %}" alt="#" />
+                        Oakciti</div>
+                </a>
 
-            <a class="navbar-brand" href="#">
-                <i id='Hicon'> <img src="{% static 'img/LOGO.png' %}" alt="">
-                </i>
-                oak<span id='citi'>citi</span> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SERVICES</a>
-                    </li>
-                    <li class="nav-item" id=contactus>
-                        <a class="nav-link" href="contact-us">CONTACT US</a>
-                    </li>
-                    <li class=" nav-item" id='login'
-                        onclick="loginpopup();document.getElementById('signuppage').style.height = '0'">
-                        <a class="nav-link" href="#">LOGIN</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"
-                            onclick="signuppopup();document.getElementById('loginpage').style.height='0'">SIGN UP</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link"><span data-hover="Home">Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#project" class="nav-link"><span data-hover="Services">Services</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#resume" class="nav-link"><span data-hover="Catalogue">Catalogue
+                                </span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact-us" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <div class="ml-lg-4">
+                            <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                                <i class="fa fa-moon-o" aria-hidden="true"
+                                    style="font-size: 25px;margin-left: 6px;"></i>
+                                Color mode
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </div>
-
         </nav>
-    </div>
-    <!-- login -->
-    <div class="login-page" id="loginpage">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <h3 class="mb-3">Login Now</h3>
-                    <div class="bg-white shadow rounded">
-                        <div class="row">
-                            <div class="col-md-7 pe-0">
-                                <div class="form-left h-100 py-5 px-5">
-                                    <form action="" class="row g-4">
-                                        <div class="col-12">
-                                            <label>Username<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                <input type="text" class="form-control" placeholder="Enter Username">
+        <div class="login-page" id="loginpage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <h3 class="mb-3">Login Now</h3>
+                        <div class="bg-white shadow rounded">
+                            <div class="row">
+                                <div class="col-md-7 pe-0">
+                                    <div class="form-left h-100 py-5 px-5">
+                                        <form action="" class="row g-4">
+                                            <div class="col-12">
+                                                <label>Username<span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-person-fill"></i>
+                                                    </div>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Username">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-12">
-                                            <label>Password<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                <input type="text" class="form-control" placeholder="Enter Password">
+                                            <div class="col-12">
+                                                <label>Password<span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Password">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-sm-6">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                <label class="form-check-label" for="inlineFormCheck">Remember
-                                                    me</label>
+                                            <div class="col-sm-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="inlineFormCheck">
+                                                    <label class="form-check-label" for="inlineFormCheck">Remember
+                                                        me</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-sm-6">
-                                            <a href="#" class="float-end text-primary">Forgot Password?</a>
-                                        </div>
+                                            <div class="col-sm-6">
+                                                <a href="#" class="float-end text-primary">Forgot Password?</a>
+                                            </div>
 
-                                        <div class="col-12">
-                                            <button type="submit"
-                                                class="btn btn-primary px-4 float-end mt-4">login</button>
-                                        </div>
-                                    </form>
+                                            <div class="col-12">
+                                                <button type="submit"
+                                                    class="btn btn-primary px-4 float-end mt-4">login</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5 ps-0 d-none d-md-block">
-                                <div class="form-right h-100 bg-dark text-white text-center pt-5">
-                                    <i class="bi bi-bootstrap"></i>
-                                    <h2 class="fs-1">Welcome Back!!!</h2>
+                                <div class="col-md-5 ps-0 d-none d-md-block">
+                                    <div class="form-right h-100 bg-dark text-white text-center pt-5">
+                                        <i class="bi bi-bootstrap"></i>
+                                        <h2 class="fs-1">Welcome Back!!!</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <p class="text-end text-secondary mt-3">Bootstrap 5 Login Page Design</p>
                     </div>
-                    <p class="text-end text-secondary mt-3">Bootstrap 5 Login Page Design</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Signup -->
+        <style>
+            {
+                % static .headercont #navbarResponsive .nav-link:hover {
+                    color: rgb(252, 175, 10, 0.507);
+                }
+        </style>
 
-    <div class="signup-page" id="signuppage">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="signup-form">
-                    <form action="" class="mt-5 border p-4  shadow">
-                        <h4 class="mb-5 text-secondary">Create Your Account</h4>
-                        <div class="row">
-                            <div class="mb-3 col-md-6">
-                                <label>First Name<span class="text-danger">*</span></label>
-                                <input type="text" name="fname" class="form-control" placeholder="Enter First Name">
-                            </div>
-
-                            <div class="mb-3 col-md-6">
-                                <label>Last Name<span class="text-danger">*</span></label>
-                                <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label>Email<span class="text-danger">*<span<label>
-                                            <input type="email" class="form-control" name="" id=""
-                                                aria-describedby="emailHelpId" placeholder="Enter your email">
-                                            <small id="emailHelpId" class="form-text text-muted">Your email</small>
-                            </div>
-
-                            <div class="mb-3 col-md-12">
-                                <label>Password<span class="text-danger">*</span></label>
-                                <input type="password" name="password" class="form-control"
-                                    placeholder="Enter Password">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label>Confirm Password<span class="text-danger">*</span></label>
-                                <input type="password" name="confirmpassword" class="form-control"
-                                    placeholder="Confirm Password">
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-primary float-end">SIGN UP</button>
-                            </div>
-                        </div>
-                    </form>
-                    <p class="text-center mt-3 text-secondary">Already have an account? <a href="#">Login Now</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        #navbarResponsive .nav-link:hover {
-            color: rgb(252, 175, 10, 0.507);
-        }
-    </style>
-
-
-    <style>
-        #navbarResponsive .nav-link:hover {
-            color: rgb(252, 175, 10, 0.507);
-        }
-    </style>
-
-
-    <style>
-        #navbarResponsive .nav-link:hover {
-            color: rgb(252, 175, 10, 0.507);
-        }
-    </style>
-
-</body>
+    </body>
+</div>
 <script>
-    contactuspopup = () => {
-        if (document.getElementById('contactuspage').style.height == '100%') { document.getElementById('contactuspage').style.height = '0%' }
-        else { document.getElementById('contactuspage').style.height = '100%' }
-
-    }
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel();
+    });
     loginpopup = () => {
         if (document.getElementById('loginpage').style.height == '100%') { document.getElementById('loginpage').style.height = '0%' }
         else { document.getElementById('loginpage').style.height = '100%' }
@@ -215,6 +178,19 @@
 
     }
 </script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/Headroom.js' %}"></script>
+<script src="{% static 'js/jQuery.headroom.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery-3.4.1.slim.js' %}"></script>
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
 
 
 </html>
