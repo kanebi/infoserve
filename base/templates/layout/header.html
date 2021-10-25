@@ -16,8 +16,9 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
 
             <a class="navbar-brand" href="#">
                 <i id='Hicon'> <img src="{% static 'img/LOGO.png' %}" alt="">
@@ -38,10 +39,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">SERVICES</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
+                    <li class="nav-item" id=contactus>
+                        <a class="nav-link" href="contact-us">CONTACT US</a>
                     </li>
-                    <li class="nav-item" id='login'
+                    <li class=" nav-item" id='login'
                         onclick="loginpopup();document.getElementById('signuppage').style.height = '0'">
                         <a class="nav-link" href="#">LOGIN</a>
 
@@ -52,8 +53,9 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+
+        </nav>
+    </div>
     <!-- login -->
     <div class="login-page" id="loginpage">
         <div class="container">
@@ -161,6 +163,12 @@
         </div>
     </div>
 
+    <style>
+        #navbarResponsive .nav-link:hover {
+            color: rgb(252, 175, 10, 0.507);
+        }
+    </style>
+
 
     <style>
         #navbarResponsive .nav-link:hover {
@@ -177,6 +185,11 @@
 
 </body>
 <script>
+    contactuspopup = () => {
+        if (document.getElementById('contactuspage').style.height == '100%') { document.getElementById('contactuspage').style.height = '0%' }
+        else { document.getElementById('contactuspage').style.height = '100%' }
+
+    }
     loginpopup = () => {
         if (document.getElementById('loginpage').style.height == '100%') { document.getElementById('loginpage').style.height = '0%' }
         else { document.getElementById('loginpage').style.height = '100%' }
