@@ -139,12 +139,30 @@
                 </div>
             </div>
         </div>
+        <div class="color-mode  justify-content-center align-items-center mobile-color-mode">
+            <i class="fa fa-moon-o" aria-hidden="true" style="font-size: 25px;margin-left: 6px;"></i>
 
+        </div>
         <style>
-            {
-                % static .headercont #navbarResponsive .nav-link:hover {
-                    color: rgb(252, 175, 10, 0.507);
+            .headercont #navbarResponsive .nav-link:hover {
+                color: rgb(252, 175, 10, 0.507);
+            }
+
+            .mobile-color-mode {
+                position: absolute;
+                display: block;
+                right: 0px;
+                margin-right: 30px;
+            }
+
+            @media screen and (min-width:1024px) {
+                .mobile-color-mode {
+                    position: inherit;
+                    z-index: 0;
+                    display: none;
+
                 }
+            }
         </style>
 
     </body>
