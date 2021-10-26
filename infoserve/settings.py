@@ -14,6 +14,7 @@ import os
 import django_heroku
 from pathlib import Path
 
+import dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,8 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['infoserve.herokuapp.com']
 
 
 # Application definition
@@ -74,18 +73,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'infoserve.wsgi.application'
 
-prod_db = dj_database_url.config(conn_max_age=500)
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-DATABASES['default'].update(prod_db)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 
 SECRET_KEY = 'django-insecure-sm7ke6(1&vc@s0x$tnt3^w$0)*v=9b+1w4vb7gb#9*m9^!p3p_'
 # Password validation
@@ -113,6 +112,8 @@ EMAIL_HOST_PASSWORD = 'lancelot24'
 EMAIL_USE_TLS = True
 
 
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1',            'oakciti.herokuapp.com']
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -141,6 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -149,5 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'base.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 django_heroku.settings(locals())

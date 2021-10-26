@@ -6,5 +6,6 @@ from django.conf.urls.static import static
 from .views import index, contact
 urlpatterns = [
     path("", index, name="home"),
-     path("contact-us", contact, name="contact-us")
+    path("contact-us", contact, name="contact-us"),
+
 ]
