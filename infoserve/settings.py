@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'infoserve.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd4r7bk2bi3umam',
-        'USER': 'evtizhzvkgjbhv',
-        'PASSWORD': '9a0532c7970d7dd5bdd88507e4a1da2d3a93386de2822565978dc91214d290d8',
-        'HOST': 'ec2-100-24-169-249.compute-1.amazonaws.com',
-        'PORT':  '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=600)

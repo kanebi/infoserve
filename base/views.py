@@ -12,6 +12,7 @@ def index(request):
         name = request.POST['name']
         email = request.POST['email']
         msg = request.POST['message']
+
         for items in msges:
             if items.name == name or items.email == email:
                 msg = True
