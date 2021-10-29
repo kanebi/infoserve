@@ -9,12 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from logging import error
 import dj_database_url
 import os
 import django_heroku
 from pathlib import Path
-
 import dotenv
+import locale
+
+locale.getpreferredencoding(False)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,10 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+dotenv_file = os.path.join(BASE_DIR, '.env')
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file, encoding='utf16')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = os.environ['DEBUG']
 
 # Application definition
 
@@ -85,8 +91,7 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-
-SECRET_KEY = 'django-insecure-sm7ke6(1&vc@s0x$tnt3^w$0)*v=9b+1w4vb7gb#9*m9^!p3p_'
+SECRET_KEY = os.environ['SECRET_KEY']
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -105,11 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-EMAIL_HOST = 'Emmakanebi@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'kane'
-EMAIL_HOST_PASSWORD = 'lancelot24'
-EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'oakciti.herokuapp.com']
@@ -150,7 +156,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTH_USER_MODEL = 'base.customUser'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']

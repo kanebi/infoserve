@@ -97,5 +97,5 @@ def send_rcv_mail(created, sender, instance, *args, **kwargs):
     if created:
         send_mail(
             'Oakciti', 'Thank you for Showing interest ! Your message is being read and we will get back to you pretty soon',
-            'Emmakanebi@gmail.com', [str(instance.email)], fail_silently=False)
+            'oakcitigroup@gmail.com', [str(instance.email)], fail_silently=False)
         print(instance.email)
