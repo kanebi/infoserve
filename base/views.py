@@ -8,3 +8,7 @@ def contact(request):
 
     return render(request, template_name='contact.html')
 # Create your views here.
+def services(request):
+
+    return render(request, template_name='services.html')
+# Create your views here.
